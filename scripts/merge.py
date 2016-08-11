@@ -1,3 +1,8 @@
 import pandas as pd
 
-pd.read_csv("../data/")
+departments = pd.read_csv("../data/departments.csv")
+dept_emp = pd.read_csv("../data/dept_emp.csv")
+
+merged = pd.merge(departments, dept_emp, on='dept_no')
+
+merged.to_csv("../tmp/merge.csv")
